@@ -5,6 +5,7 @@ import re
 from docx import Document
 
 # dictionary
+# the index is the string replaced in the document, it's value is what will it be replaced with
 dict = {
     "Titre1": "Voici le premier titre",
     "Titre2": "Voici le premier titre",
