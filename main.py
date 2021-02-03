@@ -1,5 +1,5 @@
 # coding=utf-8
-# Program created by Nathan Gueissaz-Teufel on 2021/02/02
+# Program created by Nathan GT on 2021/02/02
 # https://github.com/nathan-gt/DocxEditPy.git
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
@@ -10,7 +10,10 @@ from docx import Document
 
 # dictionary
 # the index is the string replaced in the document, it's value is what will it be replaced with
-with open('src/dictionary.json') as f:
+path = "dictionary.json"
+if os.path.exists("src/dictionary.json"):
+    path = "src/dictionary.json"
+with open(path) as f:
     dictionary = json.load(f)
 
 
@@ -33,6 +36,7 @@ def docx_replace_regex(doc_obj, regex, replace):
 
 
 # User fetches the initial docx file
+print("Please choose the .docx file to edit...")
 Tk().withdraw()
 filename = askopenfilename()
 doc = Document(filename)
